@@ -7,6 +7,7 @@
 [
   (type_token)
   (interface_token)
+  (union_token)
   (implements_token)
   (enum_token)
   (scalar_token)

@@ -15,7 +15,7 @@ providing Tree-sitter highlighting and LSP support.
 
 ```lua
 {
-  "vito/dang.nvim",
+  "https://codeberg.org/vito/dang.nvim",
   dependencies = { "nvim-treesitter/nvim-treesitter" },
   config = function()
     require("dang").setup()

@@ -23,6 +23,9 @@
   (on_token)
   (import_token)
   (new_token)
+  (try_token)
+  (catch_token)
+  (raise_token)
 
   (and_token)
   (or_token)

@@ -4,18 +4,20 @@ function M.setup(opts)
   opts = opts or {}
   local enable_lsp = opts.lsp ~= false
 
-  -- Register Tree-sitter parser
-  local ok, parsers = pcall(require, "nvim-treesitter.parsers")
-  if ok then
-    parsers.dang = {
-      install_info = {
-        url = "https://github.com/vito/dang",
-        location = "treesitter",
-        files = { "src/parser.c" },
-        branch = "main",
-      },
-    }
-  end
+  -- Register Tree-sitter parser for :TSInstall/:TSUpdate
+  vim.api.nvim_create_autocmd('User', {
+    pattern = 'TSUpdate',
+    callback = function()
+      require('nvim-treesitter.parsers').dang = {
+        install_info = {
+          url = 'https://github.com/vito/dang',
+          location = 'treesitter',
+          files = { 'src/parser.c' },
+          branch = 'main',
+        },
+      }
+    end,
+  })
 
   -- Set up basic filetype options
   vim.api.nvim_create_autocmd("FileType", {

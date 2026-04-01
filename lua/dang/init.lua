@@ -7,17 +7,13 @@ function M.setup(opts)
   -- Register Tree-sitter parser
   local ok, parsers = pcall(require, "nvim-treesitter.parsers")
   if ok then
-    local parser_config = parsers.get_parser_configs()
-    parser_config.dang = {
+    parsers.dang = {
       install_info = {
         url = "https://github.com/vito/dang",
         location = "treesitter",
         files = { "src/parser.c" },
         branch = "main",
-        generate_requires_npm = false,
-        requires_generate_from_grammar = false,
       },
-      filetype = "dang",
     }
   end
 

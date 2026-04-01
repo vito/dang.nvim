@@ -88,7 +88,7 @@
 
 ;; Field selections
 (select_or_call
-  (id) @function.method.call)
+  (field_id) @function.method.call)
 
 ;; Object selection
 (field_selection

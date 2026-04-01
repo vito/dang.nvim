@@ -19,17 +19,6 @@ function M.setup(opts)
     end,
   })
 
-  -- Set up basic filetype options
-  vim.api.nvim_create_autocmd("FileType", {
-    pattern = "dang",
-    callback = function()
-      vim.bo.commentstring = "# %s"
-      vim.bo.tabstop = 2
-      vim.bo.shiftwidth = 2
-      vim.bo.expandtab = false
-    end,
-  })
-
   -- Set up LSP
   if enable_lsp then
     vim.api.nvim_create_autocmd("FileType", {

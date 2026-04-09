@@ -6,4 +6,5 @@ vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 vim.bo.commentstring = '# %s'
 vim.bo.tabstop = 2
 vim.bo.shiftwidth = 2
-vim.bo.expandtab = false
+vim.bo.softtabstop = 2
+vim.bo.expandtab = true

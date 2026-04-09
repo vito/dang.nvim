@@ -31,6 +31,7 @@ Clone into your Neovim packages directory and call `require("dang").setup()`.
 
 - Registers the `dang` filetype for `*.dang` files
 - Installs the Tree-sitter grammar and queries (highlights, folds, indents, locals)
+- Uses Dang's standard two-space indentation with spaces, not tabs
 - Starts the Dang LSP (`dang --lsp`) automatically for `.dang` files
 
 ## Configuration
@@ -40,3 +41,15 @@ require("dang").setup({
   lsp = true, -- set to false to disable LSP
 })
 ```
+
+## Testing
+
+Run the Neovim indent tests with:
+
+```bash
+./scripts/test-indent
+```
+
+Tree-sitter's generic query tests (`tree-sitter query --test`) can validate
+captures, but the actual indentation behavior is Neovim-specific, so the
+end-to-end checks live here.

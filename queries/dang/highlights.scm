@@ -25,6 +25,7 @@
   (try_token)
   (catch_token)
   (raise_token)
+  (return_token)
 
   (and_token)
   (or_token)

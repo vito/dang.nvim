@@ -62,6 +62,7 @@
   (double_interro_token)
   (bang_token)
   (arrow_token)
+  (ampersand_token)
 ] @operator
 
 ["{{" "}}" "{" "}" "[" "]" "(" ")"] @punctuation.bracket
@@ -69,7 +70,6 @@
 [
   (comma_token)
   (dot_token)
-  (ampersand_token)
 ] @punctuation.delimiter
 
 ["@" "|"] @punctuation.special

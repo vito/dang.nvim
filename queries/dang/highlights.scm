@@ -38,8 +38,15 @@
 (string (immediate_escape) @string.escape)
 (doc_string) @string
 (triple_quote_string) @string
-(single_template) @string
-(multi_template) @string
+(single_template "`" @string)
+(single_template
+  (single_template_part !e) @string)
+(multi_template
+  (multi_template_open_token) @string)
+(multi_template
+  (multi_template_close_token) @string)
+(multi_template
+  (multi_template_part !e) @string)
 (multi_template
   (lang_tag_part (lang_tag_name) @label))
 (int) @number
@@ -77,6 +84,42 @@
 ] @punctuation.delimiter
 
 ["@" "|"] @punctuation.special
+
+;; Whitespace before `${` is parsed as part of the interpolation token because
+;; whitespace is normally an extra; keep that prefix highlighted as string.
+((single_template_part
+  "${" @string
+  e: (_)
+  "}")
+  (#offset! @string 0 0 0 -2))
+((multi_template_part
+  "${" @string
+  e: (_)
+  "}")
+  (#offset! @string 0 0 0 -2))
+
+;; Template interpolation delimiters. Keep these after the generic bracket
+;; captures so the closing `}` is highlighted as interpolation punctuation.
+((single_template_part
+  "${" @punctuation.special
+  e: (_)
+  "}")
+  (#trim! @punctuation.special 0 1 0 0))
+((single_template_part
+  "${"
+  e: (_)
+  "}" @punctuation.special)
+  (#trim! @punctuation.special 0 1 0 0))
+((multi_template_part
+  "${" @punctuation.special
+  e: (_)
+  "}")
+  (#trim! @punctuation.special 0 1 0 0))
+((multi_template_part
+  "${"
+  e: (_)
+  "}" @punctuation.special)
+  (#trim! @punctuation.special 0 1 0 0))
 
 ;; Identifiers
 (symbol) @variable

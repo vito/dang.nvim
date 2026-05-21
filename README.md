@@ -50,6 +50,13 @@ Run the Neovim indent tests with:
 ./scripts/test-indent
 ```
 
+Highlighting is covered by Dang's parent-repo golden corpus, which runs
+headless Neovim against this plugin:
+
+```bash
+cd ../.. && go test ./tests -run 'TestDang/TestNeovimHighlights'
+```
+
 Tree-sitter's generic query tests (`tree-sitter query --test`) can validate
-captures, but the actual indentation behavior is Neovim-specific, so the
-end-to-end checks live here.
+captures, but actual indentation and highlighting behavior are
+Neovim-specific, so the end-to-end checks live here or in the parent repo.

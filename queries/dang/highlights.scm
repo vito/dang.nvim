@@ -38,6 +38,10 @@
 (string (immediate_escape) @string.escape)
 (doc_string) @string
 (triple_quote_string) @string
+(single_template) @string
+(multi_template) @string
+(multi_template
+  (lang_tag_part (lang_tag_name) @label))
 (int) @number
 (boolean) @boolean
 (null) @constant.builtin

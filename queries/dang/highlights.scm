@@ -131,7 +131,10 @@
 ;; Built-in functions
 ((call
   (symbol) @function.builtin)
-  (#match? @function.builtin "^(print|toJSON)$"))
+  (#match? @function.builtin "^(assert|print|toJSON|toString)$"))
+((symbol_block
+  (symbol) @function.builtin)
+  (#match? @function.builtin "^(assert|print|toJSON|toString)$"))
 
 ;; Field selections
 (select_or_call

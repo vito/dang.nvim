@@ -170,7 +170,7 @@
   (symbol) @variable.parameter)
 
 ;; Type definitions
-(class (symbol) @type)
+(object_decl (symbol) @type)
 (implements (symbol) @type)
 (interface (symbol) @type)
 (enum (symbol) @type)

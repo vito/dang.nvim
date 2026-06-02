@@ -9,7 +9,7 @@
   (headers_block)
   (list)
   (list_type)
-  (object)
+  (object_literal)
   (object_selection)
   (object_type)
   (paren_form)

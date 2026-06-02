@@ -172,7 +172,7 @@
 ;; Type definitions
 (object_decl (symbol) @type)
 (implements (symbol) @type)
-(interface (symbol) @type)
-(enum (symbol) @type)
-(enum (caps_symbol) @property)
-(scalar (symbol) @type)
+(interface_decl (symbol) @type)
+(enum_decl (symbol) @type)
+(enum_decl (caps_symbol) @property)
+(scalar_decl (symbol) @type)

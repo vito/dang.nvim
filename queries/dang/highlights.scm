@@ -163,6 +163,8 @@
 ;; Field definitions
 (type_and_block_field
   (symbol) @function.method)
+(type_and_args_field
+  (symbol) @function.method)
 (type_and_args_and_block_field
   (symbol) @function.method)
 (type_and_value_field

@@ -13,7 +13,6 @@
   (scalar_token)
   (if_token)
   (else_token)
-  (for_token)
   (break_token)
   (continue_token)
   (case_token)
@@ -144,10 +143,10 @@
 ;; Built-in functions
 ((call
   (symbol) @function.builtin)
-  (#match? @function.builtin "^(assert|print|toJSON|toString)$"))
+  (#match? @function.builtin "^(assert|print|loop|toJSON|toString)$"))
 ((symbol_block
   (symbol) @function.builtin)
-  (#match? @function.builtin "^(assert|print|toJSON|toString)$"))
+  (#match? @function.builtin "^(assert|print|loop|toJSON|toString)$"))
 
 ;; Field selections
 (select_or_call

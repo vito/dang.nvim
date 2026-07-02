@@ -22,6 +22,7 @@
   (new_token)
   (try_token)
   (catch_token)
+  (rescue_token)
   (raise_token)
   (return_token)
 

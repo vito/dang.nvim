@@ -33,4 +33,5 @@
   (comment_token)
   (doc_string)
   (triple_quote_string)
+  (triple_single_quote_string)
 ] @indent.ignore
